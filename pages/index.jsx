@@ -26,7 +26,7 @@ export async function getServerSideProps(context) {
 
 export default function Home() {
   return (
-    <main className="font-jost">
+    <main className="font-jost bg-white">
       <div className="lg:px-28 px-6 py-16 lg:py-28 text-center">
         <h1 className="lg:text-4xl text-xl font-semibold">
           The only email API you&apos;ll ever need
