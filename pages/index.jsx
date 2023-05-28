@@ -74,7 +74,7 @@ export default function Home() {
               necessitatibus voluptatibus, sapiente deserunt quisquam quidem
               dolor?s
             </p>
-            <div className=" mt-10 flex items-center space-x-7">
+            <div className=" mt-10 flex items-center space-x-4">
               <button className="w-fit px-6 py-2 bg-indigo-500 rounded text-white">
                 Read more
               </button>
