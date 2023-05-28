@@ -9,7 +9,7 @@ function Credential() {
       </p>
       <p className="text-sm mt-4 text-zinc-700">admin@gmail.com</p>
       <div className="mt-6 flex items-center">
-        <button className="text-sm h-10 px-6 border rounded bg-zinc-50">
+        <button className="text-sm h-10 px-5 border rounded bg-zinc-50">
           Copy secret id
         </button>
         <button className="ml-2 text-sm h-10 px-6 border rounded bg-zinc-50">
