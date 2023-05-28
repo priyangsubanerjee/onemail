@@ -61,8 +61,13 @@ function Dashboard() {
       </div>
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-3 lg:mt-7 px-5 mt-7">
         {credentials == null ? (
-          <div className="mt-16 lg:col-span-3">
-            <h1 className="text-xl text-center">No credentials found</h1>
+          <div className="mt-10 lg:col-span-3 flex flex-col items-center">
+            <img
+              src="https://cdni.iconscout.com/illustration/premium/thumb/add-photo-2670583-2215267.png"
+              alt=""
+              className="h-44"
+            />
+            <h1 className="text-xl text-center mt-10">No credentials found</h1>
           </div>
         ) : credentials.length == 0 ? (
           <div className="flex items-center justify-center lg:col-span-3">
