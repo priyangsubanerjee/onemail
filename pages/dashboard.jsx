@@ -60,7 +60,11 @@ function Dashboard() {
         </button>
       </div>
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-3 lg:mt-7">
-        {credentials.length == 0 ? (
+        {credentials == null ? (
+          <div className="mt-16 lg:col-span-3">
+            <h1 className="text-xl text-center">No credentials found</h1>
+          </div>
+        ) : credentials.length == 0 ? (
           <div className="flex items-center justify-center lg:col-span-3">
             <img
               src="https://i.pinimg.com/originals/65/ba/48/65ba488626025cff82f091336fbf94bb.gif"

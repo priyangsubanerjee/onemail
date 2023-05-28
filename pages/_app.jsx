@@ -33,7 +33,7 @@ export default function App({
         let data = await res.json();
         if (data.success) {
           console.log(data.credentials);
-          setCredentials(data.credentials);
+          setCredentials(data.credentials.length > 0 ? data.credentials : null);
           return true;
         }
       } else {
