@@ -42,6 +42,20 @@ export default function Home() {
           </ul>
         </div>
       </div>
+      <div className="lg:px-28 px-6 py-16 lg:py-28 text-center">
+        <h1 className="lg:text-4xl text-xl font-semibold">
+          The only email API you&apos;ll ever need
+        </h1>
+        <p className="mt-4 lg:mt-5 leading-8 text-sm lg:text-base">
+          Onemail is a simple, reliable API for sending html temaplates directly
+          from your frontend app to your users&apos; inbox.
+        </p>
+        <img
+          className="mt-7"
+          src="https://magicbell.com/api/og-images?url=https://magicbell.ghost.io/content/images/2022/01/EmailAPIs.jpeg"
+          alt=""
+        />
+      </div>
     </main>
   );
 }
