@@ -28,7 +28,7 @@ function Navbar() {
         </ul>
         <div className="ml-auto">
           {session.status == "authenticated" ? (
-            <div className="flex items-center cursor-pointer hover:bg-zinc-100 px-4 py-2 rounded-md">
+            <div className="flex items-center cursor-pointer lg:hover:bg-zinc-100 lg:px-4 py-2 rounded-md">
               <img
                 className="h-10 w-10 rounded-full object-cover"
                 src={session.data.user.image}
