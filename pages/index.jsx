@@ -56,7 +56,7 @@ export default function Home() {
           alt=""
         />
 
-        <div className="h-[1px] w-full bg-slate-200 mt-20"></div>
+        <div className="h-[1px] hidden lg:block w-full bg-slate-200 mt-20"></div>
         <div className="lg:flex lg:space-x-16 justify-center lg:px-16 mt-24">
           <div className="flex flex-col items-center justify-center">
             <h1 className="lg:text-3xl text-xl font-medium leading-[1.4]">
