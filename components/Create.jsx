@@ -71,7 +71,7 @@ function Create() {
                 placeholder="Display name"
                 value={data.name}
                 onChange={(e) => setData({ ...data, name: e.target.value })}
-                className="h-14 px-4 border w-full rounded-none"
+                className="h-14 px-4 border w-full rounded"
                 name=""
                 id=""
               />
@@ -80,7 +80,7 @@ function Create() {
                 placeholder="Email"
                 value={data.email}
                 onChange={(e) => setData({ ...data, email: e.target.value })}
-                className="h-14 px-4 border w-full mt-4 rounded-none"
+                className="h-14 px-4 border w-full mt-4 rounded"
                 name=""
                 id=""
               />
@@ -89,7 +89,7 @@ function Create() {
                 placeholder="App password"
                 value={data.password}
                 onChange={(e) => setData({ ...data, password: e.target.value })}
-                className="h-14 px-4 border w-full mt-4 rounded-none"
+                className="h-14 px-4 border w-full mt-4 rounded"
                 name=""
                 id=""
               />
@@ -101,7 +101,7 @@ function Create() {
                 onChange={(e) =>
                   setData({ ...data, description: e.target.value })
                 }
-                className="border p-4 w-full mt-4 rounded-none resize-none"
+                className="border p-4 w-full mt-4 rounded resize-none"
                 placeholder="Description"
               ></textarea>
               <button className="w-full bg-black rounded text-white py-4 mt-7">
