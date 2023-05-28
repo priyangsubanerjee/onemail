@@ -2,7 +2,7 @@ import React from "react";
 
 function Credential() {
   return (
-    <div className="bg-white border rounded-md p-6 font-jost z-10">
+    <div className="bg-white border rounded-md p-6 font-jost">
       <h1 className="text-lg font-medium">Business name</h1>
       <p className="text-sm mt-2 text-zinc-700">
         Lorem ipsum dolor sit amet consectetur adipisicing elit.
