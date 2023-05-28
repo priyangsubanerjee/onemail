@@ -55,6 +55,34 @@ export default function Home() {
           src="https://magicbell.com/api/og-images?url=https://magicbell.ghost.io/content/images/2022/01/EmailAPIs.jpeg"
           alt=""
         />
+        <div className="lg:flex justify-center lg:px-24 text-left mt-20">
+          <div className="flex flex-col justify-center">
+            <h1 className="lg:text-3xl text-xl font-medium">
+              Wanna do a quick OTP verification?{" "}
+              <span className="text-indigo-500">We got you !</span>
+            </h1>
+            <img
+              src="https://img.freepik.com/free-vector/two-factor-authentication-concept-illustration_114360-5488.jpg?w=2000"
+              alt=""
+              className="h-[300px] lg:hidden block mt-5"
+            />
+            <p className="leading-7 lg:leading-8 mt-5">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit.
+              Accusantium quis, temporibus omnis inventore consectetur rem
+              tempore adipisci harum est impedit modi suscipit, possimus
+              necessitatibus voluptatibus, sapiente deserunt quisquam quidem
+              dolor?s
+            </p>
+            <button className="w-fit px-6 py-2 bg-indigo-500 rounded text-white mt-10">
+              Read more
+            </button>
+          </div>
+          <img
+            src="https://img.freepik.com/free-vector/two-factor-authentication-concept-illustration_114360-5488.jpg?w=2000"
+            alt=""
+            className="h-[500px] hidden lg:block"
+          />
+        </div>
       </div>
     </main>
   );
