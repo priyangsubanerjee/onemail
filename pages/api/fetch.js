@@ -7,19 +7,16 @@ export default async function handler(req, res) {
   switch (method) {
     case "POST":
       await connectDatabase();
-      const { name, email, password, description, admin } = JSON.parse(
-        req.body
-      );
-      let n = new credential({
-        admin,
-        name,
-        email,
-        password,
-        description,
-      });
+      const { admin } = JSON.parse(req.body);
       try {
-        await n.save();
-        res.status(200).json({ success: true, message: "Credential created" });
+        let credentials = await credential.find({
+          admin,
+        });
+        res.status(200).json({
+          success: true,
+          message: "Credential created",
+          credentials,
+        });
       } catch (error) {
         res
           .status(500)

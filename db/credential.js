@@ -2,6 +2,10 @@ const mongoose = require("mongoose");
 const { Schema } = mongoose;
 
 const credentialsSchema = new Schema({
+  admin: {
+    type: String,
+    required: true,
+  },
   name: {
     type: String,
     required: true,

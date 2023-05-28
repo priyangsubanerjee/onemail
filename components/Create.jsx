@@ -1,14 +1,45 @@
 import GlobalStateContext from "@/context/GlobalStates";
-import React, { useContext } from "react";
+import { useSession } from "next-auth/react";
+import React, { useContext, useState } from "react";
 
 function Create() {
-  const { createOpen, setCreateOpen } = useContext(GlobalStateContext);
+  const session = useSession();
+  const { createOpen, setCreateOpen, refreshData, setLoading, changeStatus } =
+    useContext(GlobalStateContext);
+  const [data, setData] = useState({
+    name: "",
+    email: "",
+    password: "",
+    description: "",
+    admin: session.data.user.email,
+  });
+
+  const handleSubmit = async (e) => {
+    setLoading(true);
+    changeStatus("Creating credential...");
+    let res = await fetch("/api/create", {
+      method: "POST",
+      body: JSON.stringify(data),
+    });
+
+    if (res.status === 200) {
+      let data = await res.json();
+      if (data.success) {
+        changeStatus("Upldating library...");
+        let refreshed = await refreshData();
+        if (refreshed) {
+          setCreateOpen(false);
+          setLoading(false);
+        }
+      }
+    }
+  };
 
   return (
     <>
       {createOpen && (
         <div className="z-20 fixed inset-0 h-full w-full bg-black/50 flex items-end lg:items-center lg:justify-center">
-          <div className="w-full lg:w-[600px] h-fit bg-white p-8 font-jost lg:rounded">
+          <div className="w-full lg:w-[550px] h-fit bg-white p-8 font-jost lg:rounded">
             <div className="flex items-center justify-between">
               <h1 className="text-xl font-light">Create credential</h1>
               <button onClick={() => setCreateOpen(false)}>
@@ -28,10 +59,18 @@ function Create() {
                 </svg>
               </button>
             </div>
-            <form action="" className="mt-10">
+            <form
+              onSubmit={(e) => {
+                e.preventDefault();
+                handleSubmit();
+              }}
+              className="mt-10"
+            >
               <input
                 type="text"
                 placeholder="Display name"
+                value={data.name}
+                onChange={(e) => setData({ ...data, name: e.target.value })}
                 className="h-14 px-4 border w-full rounded-none"
                 name=""
                 id=""
@@ -39,6 +78,8 @@ function Create() {
               <input
                 type="text"
                 placeholder="Email"
+                value={data.email}
+                onChange={(e) => setData({ ...data, email: e.target.value })}
                 className="h-14 px-4 border w-full mt-4 rounded-none"
                 name=""
                 id=""
@@ -46,6 +87,8 @@ function Create() {
               <input
                 type="text"
                 placeholder="App password"
+                value={data.password}
+                onChange={(e) => setData({ ...data, password: e.target.value })}
                 className="h-14 px-4 border w-full mt-4 rounded-none"
                 name=""
                 id=""
@@ -54,6 +97,10 @@ function Create() {
                 name=""
                 id=""
                 rows={4}
+                value={data.description}
+                onChange={(e) =>
+                  setData({ ...data, description: e.target.value })
+                }
                 className="border p-4 w-full mt-4 rounded-none resize-none"
                 placeholder="Description"
               ></textarea>

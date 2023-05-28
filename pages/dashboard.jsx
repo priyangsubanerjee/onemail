@@ -1,5 +1,6 @@
-import React, { useContext } from "react";
-import { signIn, signOut } from "next-auth/react";
+/* eslint-disable react-hooks/exhaustive-deps */
+import React, { useContext, useEffect, useState } from "react";
+import { signIn, signOut, useSession } from "next-auth/react";
 import { getServerSession } from "next-auth/next";
 import { authOptions } from "pages/api/auth/[...nextauth]";
 import Credential from "@/components/Credential";
@@ -26,7 +27,9 @@ export async function getServerSideProps(context) {
 }
 
 function Dashboard() {
-  const { createOpen, setCreateOpen } = useContext(GlobalStateContext);
+  const { createOpen, setCreateOpen, credentials } =
+    useContext(GlobalStateContext);
+  const session = useSession();
 
   return (
     <div className="lg:px-28 lg:py-0 px-5 pb-20 font-jost">
@@ -50,15 +53,19 @@ function Dashboard() {
         </div>
         <button
           onClick={() => setCreateOpen(true)}
-          className="border border-black/30 rounded bg-white text-black px-5 h-10"
+          className="border border-black/20 rounded bg-white text-black px-5 h-10"
         >
           Create new
         </button>
       </div>
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-3 lg:mt-7">
-        <Credential />
-        <Credential />
-        <Credential />
+        {credentials.length == 0 ? (
+          <div></div>
+        ) : (
+          credentials.map((credential, i) => {
+            return <Credential key={i} data={credential} />;
+          })
+        )}
       </div>
       <Create />
     </div>

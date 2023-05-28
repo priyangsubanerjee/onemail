@@ -1,13 +1,13 @@
 import React from "react";
 
-function Credential() {
+function Credential({ data }) {
   return (
-    <div className="bg-white border rounded-md p-6 font-jost">
-      <h1 className="text-lg font-medium">Business name</h1>
-      <p className="text-sm mt-2 text-zinc-700">
-        Lorem ipsum dolor sit amet consectetur adipisicing elit.
+    <div className="bg-white border p-6 font-jost">
+      <h1 className="text-lg font-medium">{data.name}</h1>
+      <p className="text-sm mt-2 text-zinc-700 overflow-hidden whitespace-nowrap text-ellipsis">
+        {data.description}
       </p>
-      <p className="text-sm mt-4 text-zinc-700">admin@gmail.com</p>
+      <p className="text-sm mt-4 text-zinc-700">{data.email}</p>
       <div className="mt-6 flex items-center">
         <button className="text-sm h-10 px-5 border rounded bg-zinc-50">
           Copy secret id
