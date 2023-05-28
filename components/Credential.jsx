@@ -36,7 +36,7 @@ function Credential({ data }) {
         <button className="text-sm h-10 px-5 border rounded bg-zinc-50">
           Copy secret id
         </button>
-        <button className="ml-2 text-sm h-10 px-6 border rounded bg-zinc-50">
+        <button className="ml-2 text-sm h-10 px-4 border rounded bg-zinc-50">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
@@ -54,7 +54,7 @@ function Credential({ data }) {
         </button>
         <button
           onClick={() => setDeleteOpen(true)}
-          className="ml-auto text-sm h-10 px-6 border rounded bg-zinc-50"
+          className="ml-auto text-sm h-10 px-4 border rounded bg-zinc-50"
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
