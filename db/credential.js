@@ -34,6 +34,13 @@ const credentialsSchema = new Schema({
     type: Number,
     default: 0,
   },
+  secret: {
+    type: String,
+    required: true,
+    default:
+      Math.random().toString(36).substring(2, 15) +
+      Math.random().toString(36).substring(2, 15),
+  },
 });
 
 mongoose.models = {};

@@ -15,6 +15,8 @@
     "mongoose": "^7.2.1",
     "next": "13.4.4",
     "next-auth": "^4.22.1",
+    "nextjs-cors": "^2.1.2",
+    "nodemailer": "^6.9.2",
     "postcss": "8.4.23",
     "react": "18.2.0",
     "react-dom": "18.2.0",
