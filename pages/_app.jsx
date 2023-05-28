@@ -4,7 +4,7 @@ import Sidebar from "@/components/Sidebar";
 import GlobalStateContext from "@/context/GlobalStates";
 import "@/styles/globals.css";
 import { SessionProvider } from "next-auth/react";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 export default function App({
   Component,
@@ -12,6 +12,14 @@ export default function App({
 }) {
   const [sidebarOpen, setSidebarOpen] = useState(false);
   const [createOpen, setCreateOpen] = useState(false);
+
+  useEffect(() => {
+    if (setSidebarOpen || createOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "auto";
+    }
+  }, [createOpen, sidebarOpen]);
 
   return (
     <SessionProvider session={session}>
