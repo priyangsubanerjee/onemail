@@ -16,7 +16,7 @@ export default function App({
   const [createOpen, setCreateOpen] = useState(false);
   const [credentials, setCredentials] = useState([]);
   const [statusText, setStatusText] = useState("Loading...");
-  const [loading, setLoading] = useState(false);
+  const [loading, setLoading] = useState(true);
 
   const changeStatus = async (text) => {
     setStatusText(text);

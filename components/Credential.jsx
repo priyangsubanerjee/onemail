@@ -1,6 +1,30 @@
-import React from "react";
+import GlobalStateContext from "@/context/GlobalStates";
+import React, { useContext, useState } from "react";
 
 function Credential({ data }) {
+  const { setLoading, changeStatus, refreshData } =
+    useContext(GlobalStateContext);
+  const [deleteOpen, setDeleteOpen] = useState(false);
+  const deleteProduct = async () => {
+    setLoading(true);
+    changeStatus("Deleting credential...");
+    const res = await fetch("/api/delete", {
+      method: "POST",
+      body: JSON.stringify({ id: data._id }),
+    });
+
+    if (res.status === 200) {
+      let data = await res.json();
+      if (data.success) {
+        changeStatus("Updating library...");
+        let refreshed = await refreshData();
+        if (refreshed) {
+          setDeleteOpen(false);
+          setLoading(false);
+        }
+      }
+    }
+  };
   return (
     <div className="bg-white border p-6 font-jost">
       <h1 className="text-lg font-medium">{data.name}</h1>
@@ -28,7 +52,10 @@ function Credential({ data }) {
             />
           </svg>
         </button>
-        <button className="ml-auto text-sm h-10 px-6 border rounded bg-zinc-50">
+        <button
+          onClick={() => setDeleteOpen(true)}
+          className="ml-auto text-sm h-10 px-6 border rounded bg-zinc-50"
+        >
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
@@ -45,6 +72,32 @@ function Credential({ data }) {
           </svg>
         </button>
       </div>
+      {deleteOpen && (
+        <div className="fixed font-jost inset-0 h-full w-full bg-black/50 z-10 flex items-center justify-center">
+          <div className="w-[95%] lg:w-[500px] bg-white p-8">
+            <h1 className="text-xl font-medium leading-8">
+              Are you sure you want to delete this credential?
+            </h1>
+            <p className="mt-5 text-zinc-600 text-sm">
+              This action is irreversibe &amp; cannot be undone
+            </p>
+            <div className="grid grid-cols-2 mt-10 gap-4">
+              <button
+                onClick={() => setDeleteOpen(false)}
+                className="bg-zinc-100 py-2"
+              >
+                Cancel
+              </button>
+              <button
+                onClick={async () => deleteProduct()}
+                className="bg-red-600 text-white py-2"
+              >
+                Delete
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 }

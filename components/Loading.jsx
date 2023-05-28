@@ -11,7 +11,7 @@ function Loading() {
         <div className="fixed inset-0 h-full w-full bg-black/50 flex items-center justify-center z-30">
           <div className="w-[80%] lg:w-[400px] flex flex-col items-center justify-center p-8 bg-white rounded-md">
             <img
-              src="https://cdn.dribbble.com/users/1787505/screenshots/7300251/shot.gif"
+              src="https://cdn.dribbble.com/users/807926/screenshots/3629667/loadingtwo.gif"
               alt=""
               className="h-56 object-contain"
             />
