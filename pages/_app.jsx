@@ -47,10 +47,10 @@ export default function App({
   }, []);
 
   useEffect(() => {
-    if (setSidebarOpen || createOpen) {
+    if (setSidebarOpen == true || createOpen == true) {
       document.body.style.overflow = "hidden";
     } else {
-      document.body.style.overflow = "auto";
+      document.body.style.overflow = "unset";
     }
   }, [createOpen, sidebarOpen]);
 
