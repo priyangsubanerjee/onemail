@@ -55,16 +55,17 @@ export default function Home() {
           src="https://magicbell.com/api/og-images?url=https://magicbell.ghost.io/content/images/2022/01/EmailAPIs.jpeg"
           alt=""
         />
-        <div className="lg:flex justify-center lg:px-24 text-left mt-20">
-          <div className="flex flex-col justify-center">
-            <h1 className="lg:text-3xl text-xl font-medium">
+
+        <div className="h-[1px] w-full bg-slate-200 mt-20"></div>
+        <div className="lg:flex lg:space-x-16 justify-center lg:px-16 mt-24">
+          <div className="flex flex-col items-center justify-center">
+            <h1 className="lg:text-3xl text-xl font-medium leading-[1.4]">
               Wanna do a quick OTP verification?{" "}
-              <span className="text-indigo-500">We got you !</span>
             </h1>
             <img
-              src="https://img.freepik.com/free-vector/two-factor-authentication-concept-illustration_114360-5488.jpg?w=2000"
+              src="https://i.pinimg.com/originals/40/78/f9/4078f9f1cb24f4020bed0062957a54ff.jpg"
               alt=""
-              className="h-[300px] lg:hidden block mt-5"
+              className="h-[300px] lg:hidden block mt-10 object-contain"
             />
             <p className="leading-7 lg:leading-8 mt-5">
               Lorem ipsum dolor sit amet consectetur adipisicing elit.
@@ -73,12 +74,17 @@ export default function Home() {
               necessitatibus voluptatibus, sapiente deserunt quisquam quidem
               dolor?s
             </p>
-            <button className="w-fit px-6 py-2 bg-indigo-500 rounded text-white mt-10">
-              Read more
-            </button>
+            <div className=" mt-10 flex items-center space-x-7">
+              <button className="w-fit px-6 py-2 bg-indigo-500 rounded text-white">
+                Read more
+              </button>
+              <button className="w-fit px-6 py-2 border border-black rounded">
+                Report an issue
+              </button>
+            </div>
           </div>
           <img
-            src="https://img.freepik.com/free-vector/two-factor-authentication-concept-illustration_114360-5488.jpg?w=2000"
+            src="https://i.pinimg.com/originals/40/78/f9/4078f9f1cb24f4020bed0062957a54ff.jpg"
             alt=""
             className="h-[500px] hidden lg:block"
           />
