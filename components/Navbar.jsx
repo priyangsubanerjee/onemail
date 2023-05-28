@@ -1,9 +1,11 @@
 /* eslint-disable @next/next/no-img-element */
+import GlobalStateContext from "@/context/GlobalStates";
 import { signIn, useSession } from "next-auth/react";
-import React from "react";
+import React, { useContext } from "react";
 
 function Navbar() {
   const session = useSession();
+  const { sidebarOpen, setSidebarOpen } = useContext(GlobalStateContext);
 
   return (
     <div className="font-jost bg-white">
@@ -28,13 +30,16 @@ function Navbar() {
         </ul>
         <div className="ml-auto">
           {session.status == "authenticated" ? (
-            <div className="flex items-center cursor-pointer lg:hover:bg-zinc-100 lg:px-4 py-2 rounded-md">
+            <button
+              onClick={() => setSidebarOpen(true)}
+              className="flex items-center cursor-pointer lg:hover:bg-zinc-100 lg:px-4 py-2 rounded-md"
+            >
               <img
                 className="h-10 w-10 rounded-full object-cover"
                 src={session.data.user.image}
                 alt=""
               />
-              <div className="ml-2 hidden lg:block">
+              <div className="hidden lg:block text-left ml-2">
                 <p className="text-sm">{session.data.user.name}</p>
                 <p className="text-xs text-zinc-700 mt-[2px]">
                   {session.data.user.email}
@@ -54,7 +59,7 @@ function Navbar() {
                   d="M19.5 8.25l-7.5 7.5-7.5-7.5"
                 />
               </svg>
-            </div>
+            </button>
           ) : (
             <button
               onClick={() => signIn("google")}
