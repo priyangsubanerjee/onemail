@@ -25,7 +25,7 @@ export async function getServerSideProps(context) {
 
 function Dashboard() {
   return (
-    <div className="lg:px-28 lg:py-0 px-6  font-jost">
+    <div className="lg:px-28 lg:py-0 px-5  font-jost">
       <div className="py-5 lg:mt-6 flex justify-between">
         <div className="flex items-center space-x-3 lg:hover:bg-zinc-100 lg:px-5 rounded">
           <svg
