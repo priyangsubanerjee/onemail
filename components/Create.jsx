@@ -32,29 +32,29 @@ function Create() {
               <input
                 type="text"
                 placeholder="Display name"
-                className="h-14 px-4 border w-full"
+                className="h-14 px-4 border w-full rounded-none"
                 name=""
                 id=""
               />
               <input
                 type="text"
                 placeholder="Email"
-                className="h-14 px-4 border w-full mt-4"
+                className="h-14 px-4 border w-full mt-4 rounded-none"
                 name=""
                 id=""
               />
               <input
                 type="text"
                 placeholder="App password"
-                className="h-14 px-4 border w-full mt-4"
+                className="h-14 px-4 border w-full mt-4 rounded-none"
                 name=""
                 id=""
               />
               <textarea
                 name=""
                 id=""
-                cols="5"
-                className="border p-4 w-full mt-4"
+                rows={4}
+                className="border p-4 w-full mt-4 rounded-none resize-none"
                 placeholder="Description"
               ></textarea>
               <button className="w-full bg-black rounded text-white py-4 mt-7">
