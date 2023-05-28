@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 /* eslint-disable react-hooks/exhaustive-deps */
 import React, { useContext, useEffect, useState } from "react";
 import { signIn, signOut, useSession } from "next-auth/react";
@@ -60,7 +61,13 @@ function Dashboard() {
       </div>
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-3 lg:mt-7">
         {credentials.length == 0 ? (
-          <div></div>
+          <div className="flex items-center justify-center">
+            <img
+              src="https://i.pinimg.com/originals/65/ba/48/65ba488626025cff82f091336fbf94bb.gif"
+              alt=""
+              className="h-56"
+            />
+          </div>
         ) : (
           credentials.map((credential, i) => {
             return <Credential key={i} data={credential} />;
