@@ -1,3 +1,4 @@
+import connectDatabase from "@/db/connect";
 import credential from "@/db/credential";
 import NextCors from "nextjs-cors";
 import nodemailer from "nodemailer";
@@ -14,6 +15,7 @@ export default async function handler(req, res) {
   switch (method) {
     case "POST":
       const { to, html, subject, text, secret } = JSON.parse(req.body);
+      await connectDatabase();
       const client = await credential.findOne({ secret });
       if (client) {
         var transporter = nodemailer.createTransport({
