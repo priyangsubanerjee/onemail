@@ -1,47 +1,32 @@
 /* eslint-disable @next/next/no-img-element */
 import Image from "next/image";
 import { Inter } from "next/font/google";
+import { signIn } from "next-auth/react";
+import { getServerSession } from "next-auth/next";
+import { authOptions } from "pages/api/auth/[...nextauth]";
+
+export async function getServerSideProps(context) {
+  const session = await getServerSession(context.req, context.res, authOptions);
+
+  if (session) {
+    return {
+      redirect: {
+        destination: "/dashboard",
+        permanent: false,
+      },
+    };
+  }
+
+  return {
+    props: {
+      session,
+    },
+  };
+}
 
 export default function Home() {
   return (
     <main className="font-jost">
-      <div>
-        <nav className="h-20 flex items-center px-5 lg:px-28 bg-white border-b">
-          <div className="flex items-center space-x-4">
-            <img src="/logo.png" className="h-12" alt="" />
-            <h1 className="text-xl lg:text-2xl">Onemail</h1>
-          </div>
-          <ul className="hidden lg:flex items-center ml-16 text-zinc-700 space-x-8">
-            <li>
-              <a href="">Home</a>
-            </li>
-            <li>
-              <a href="">Documentaion</a>
-            </li>
-            <li>
-              <a href="">Feedback</a>
-            </li>
-          </ul>
-          <div className="ml-auto">
-            <button className="border hover:bg-black/5 border-black text-black px-8 lg:px-6 py-1 transition-all rounded-full">
-              Sign in
-            </button>
-          </div>
-        </nav>
-        <div>
-          <ul className="flex lg:hidden items-center p-3 justify-center border-b text-zinc-700 space-x-8">
-            <li>
-              <a href="">Home</a>
-            </li>
-            <li>
-              <a href="">Documentaion</a>
-            </li>
-            <li>
-              <a href="">Feedback</a>
-            </li>
-          </ul>
-        </div>
-      </div>
       <div className="lg:px-28 px-6 py-16 lg:py-28 text-center">
         <h1 className="lg:text-4xl text-xl font-semibold">
           The only email API you&apos;ll ever need
@@ -65,7 +50,7 @@ export default function Home() {
             <img
               src="https://i.pinimg.com/originals/40/78/f9/4078f9f1cb24f4020bed0062957a54ff.jpg"
               alt=""
-              className="h-[300px] lg:hidden block mt-10 object-contain"
+              className="h-[200px] lg:hidden block mt-10 object-contain"
             />
             <p className="leading-7 lg:leading-8 mt-5">
               Lorem ipsum dolor sit amet consectetur adipisicing elit.
