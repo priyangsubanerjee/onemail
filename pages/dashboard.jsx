@@ -33,8 +33,8 @@ function Dashboard() {
   const session = useSession();
 
   return (
-    <div className="lg:px-28 lg:py-0 px-5 pb-20 font-jost">
-      <div className="py-5 lg:mt-6 flex justify-between">
+    <div className="lg:px-28 lg:py-0 pb-20 font-jost">
+      <div className="py-4 px-5 lg:px-0 border-b lg:border-none lg:bg-transparent lg:mt-6 flex justify-between bg-white">
         <div className="flex items-center space-x-3 lg:hover:bg-zinc-100 lg:px-5 rounded">
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -59,7 +59,7 @@ function Dashboard() {
           Create new
         </button>
       </div>
-      <div className="grid grid-cols-1 lg:grid-cols-3 gap-3 lg:mt-7">
+      <div className="grid grid-cols-1 lg:grid-cols-3 gap-3 lg:mt-7 px-5 mt-7">
         {credentials == null ? (
           <div className="mt-16 lg:col-span-3">
             <h1 className="text-xl text-center">No credentials found</h1>

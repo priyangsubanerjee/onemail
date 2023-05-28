@@ -70,22 +70,25 @@ function Navbar() {
           )}
         </div>
       </nav>
-      <div>
-        <ul className="flex lg:hidden items-center p-3 justify-center border-b text-zinc-700 space-x-8">
-          {session.status == "unauthenticated" && (
+
+      {session.status == "unauthenticated" && (
+        <div>
+          <ul className="flex lg:hidden items-center p-3 justify-center border-b text-zinc-700 space-x-8">
+            {session.status == "unauthenticated" && (
+              <li>
+                {" "}
+                <a href="">Home</a>
+              </li>
+            )}
             <li>
-              {" "}
-              <a href="">Home</a>
+              <a href="">Documentaion</a>
             </li>
-          )}
-          <li>
-            <a href="">Documentaion</a>
-          </li>
-          <li>
-            <a href="">Feedback</a>
-          </li>
-        </ul>
-      </div>
+            <li>
+              <a href="">Feedback</a>
+            </li>
+          </ul>
+        </div>
+      )}
     </div>
   );
 }
