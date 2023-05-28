@@ -1,8 +1,10 @@
-import React from "react";
+import React, { useContext } from "react";
 import { signIn, signOut } from "next-auth/react";
 import { getServerSession } from "next-auth/next";
 import { authOptions } from "pages/api/auth/[...nextauth]";
 import Credential from "@/components/Credential";
+import Create from "@/components/Create";
+import GlobalStateContext from "@/context/GlobalStates";
 
 export async function getServerSideProps(context) {
   const session = await getServerSession(context.req, context.res, authOptions);
@@ -24,6 +26,8 @@ export async function getServerSideProps(context) {
 }
 
 function Dashboard() {
+  const { createOpen, setCreateOpen } = useContext(GlobalStateContext);
+
   return (
     <div className="lg:px-28 lg:py-0 px-5 pb-20 font-jost">
       <div className="py-5 lg:mt-6 flex justify-between">
@@ -44,7 +48,10 @@ function Dashboard() {
           </svg>
           <span>Sort</span>
         </div>
-        <button className="border border-black/30 rounded bg-white text-black px-5 h-10">
+        <button
+          onClick={() => setCreateOpen(true)}
+          className="border border-black/30 rounded bg-white text-black px-5 h-10"
+        >
           Create new
         </button>
       </div>
@@ -53,6 +60,7 @@ function Dashboard() {
         <Credential />
         <Credential />
       </div>
+      <Create />
     </div>
   );
 }

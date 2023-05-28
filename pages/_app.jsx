@@ -1,3 +1,4 @@
+import Create from "@/components/Create";
 import Navbar from "@/components/Navbar";
 import Sidebar from "@/components/Sidebar";
 import GlobalStateContext from "@/context/GlobalStates";
@@ -10,6 +11,7 @@ export default function App({
   pageProps: { session, ...pageProps },
 }) {
   const [sidebarOpen, setSidebarOpen] = useState(false);
+  const [createOpen, setCreateOpen] = useState(false);
 
   return (
     <SessionProvider session={session}>
@@ -17,6 +19,8 @@ export default function App({
         value={{
           sidebarOpen,
           setSidebarOpen,
+          createOpen,
+          setCreateOpen,
         }}
       >
         <Navbar />
