@@ -1,10 +1,14 @@
 import GlobalStateContext from "@/context/GlobalStates";
 import React, { useContext, useState } from "react";
+import Edit from "./Edit";
 
 function Credential({ data }) {
   const { setLoading, changeStatus, refreshData } =
     useContext(GlobalStateContext);
+
   const [deleteOpen, setDeleteOpen] = useState(false);
+  const [editOpen, setEditOpen] = useState(false);
+
   const deleteProduct = async () => {
     setLoading(true);
     changeStatus("Deleting credential...");
@@ -36,7 +40,10 @@ function Credential({ data }) {
         <button className="text-sm h-10 px-5 border rounded bg-zinc-50">
           Copy secret id
         </button>
-        <button className="ml-2 text-sm h-10 px-4 border rounded bg-zinc-50">
+        <button
+          onClick={() => setEditOpen(true)}
+          className="ml-2 text-sm h-10 px-4 border rounded bg-zinc-50"
+        >
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
@@ -98,6 +105,8 @@ function Credential({ data }) {
           </div>
         </div>
       )}
+
+      {editOpen && <Edit credential={data} setEditOpen={setEditOpen} />}
     </div>
   );
 }
