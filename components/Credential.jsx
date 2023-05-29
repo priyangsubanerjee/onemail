@@ -37,8 +37,21 @@ function Credential({ data }) {
       </p>
       <p className="text-sm mt-4 text-zinc-700">{data.email}</p>
       <div className="mt-6 flex items-center">
-        <button className="text-sm h-10 px-5 border rounded bg-zinc-50">
-          Copy secret id
+        <button
+          onClick={(e) => {
+            try {
+              navigator.clipboard.writeText(data.secret);
+              e.target.innerText = "Copied";
+              setTimeout(() => {
+                e.target.innerText = "Copy secret";
+              }, 3000);
+            } catch (error) {
+              console.log(error);
+            }
+          }}
+          className="text-sm h-10 px-5 border rounded bg-zinc-50 hover:bg-transparent"
+        >
+          Copy secret
         </button>
         <button
           onClick={() => setEditOpen(true)}
