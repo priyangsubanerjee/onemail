@@ -4,6 +4,7 @@ import { Inter } from "next/font/google";
 import { signIn } from "next-auth/react";
 import { getServerSession } from "next-auth/next";
 import { authOptions } from "pages/api/auth/[...nextauth]";
+import Head from "next/head";
 
 export async function getServerSideProps(context) {
   const session = await getServerSession(context.req, context.res, authOptions);
@@ -27,6 +28,9 @@ export async function getServerSideProps(context) {
 export default function Home() {
   return (
     <main className="font-jost bg-white">
+      <Head>
+        <title>Onemail | Email service api</title>
+      </Head>
       <div className="lg:px-28 px-6 py-16 lg:py-28 text-center">
         <h1 className="lg:text-4xl text-xl font-semibold">
           The only email API you&apos;ll ever need
