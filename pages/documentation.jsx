@@ -47,15 +47,15 @@ function Documentation() {
     }
     `;
   return (
-    <div className="lg:px-28 px-5 lg:py-16 font-jost">
+    <div className="lg:px-28 px-5 py-8 lg:py-16 font-jost">
       <h1 className="text-2xl">Documentation</h1>
       <p className="text-sm mt-2 text-zinc-600">
         make sure you have a onemail account & atleast 1 active credential
       </p>
 
-      <h1 className="text-lg lg:text-xl mt-28 leading-[1.9]">
+      <h1 className="text-lg lg:text-xl mt-10 lg:mt-28 leading-[1.9]">
         Send email & wait for response using{" "}
-        <span className="font-mono lg:text-base bg-red-100 px-4 py-1">
+        <span className="font-mono text-sm lg:text-base bg-red-100 px-2 py-1">
           async & await
         </span>
       </h1>
@@ -68,7 +68,7 @@ function Documentation() {
 
       <h1 className="text-xl mt-28 leading-[1.9]">
         Send email in the background using our{" "}
-        <span className="font-mono text-base bg-red-100 px-4 py-1">
+        <span className="font-mono  text-sm lg:text-base bg-red-100 px-4 py-1">
           serverless function
         </span>
       </h1>

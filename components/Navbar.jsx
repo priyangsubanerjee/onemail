@@ -18,7 +18,6 @@ function Navbar() {
         <ul className="hidden lg:flex items-center ml-16 text-zinc-700 space-x-8">
           {session.status == "unauthenticated" && (
             <li>
-              {" "}
               <a href="">Home</a>
             </li>
           )}
@@ -82,7 +81,7 @@ function Navbar() {
               </li>
             )}
             <li>
-              <a href="">Documentaion</a>
+              <Link href="/documentation">Documentaion</Link>
             </li>
             <li>
               <a href="">Feedback</a>
