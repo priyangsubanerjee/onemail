@@ -39,7 +39,7 @@ function Create() {
     <>
       {createOpen && (
         <div className="z-20 fixed inset-0 h-full w-full bg-black/50 flex items-end lg:items-center lg:justify-center">
-          <div className="w-full lg:w-[550px] h-full lg:h-fit bg-white p-6 lg:p-8 font-jost lg:rounded">
+          <div className="w-full lg:w-[550px] h-full lg:h-fit bg-white p-6 lg:p-8 font-jost">
             <div className="flex items-center justify-between">
               <h1 className="text-xl font-light">Create credential</h1>
               <button onClick={() => setCreateOpen(false)}>
