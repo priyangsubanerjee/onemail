@@ -9,6 +9,7 @@ module.exports = {
     extend: {
       fontFamily: {
         jost: ["Jost", "sans-serif"],
+        anonymous: ["Anonymous Pro", "monospace"],
       },
     },
   },
