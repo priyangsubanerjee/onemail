@@ -22,7 +22,7 @@ function Navbar() {
             </li>
           )}
           <li>
-            <a href="">Documentaion</a>
+            <a href="/documentation">Documentaion</a>
           </li>
           <li>
             <a href="">Feedback</a>

@@ -1,5 +1,6 @@
 import GlobalStateContext from "@/context/GlobalStates";
 import { signOut, useSession } from "next-auth/react";
+import Link from "next/link";
 import React, { useContext } from "react";
 
 function Sidebar() {
@@ -37,9 +38,11 @@ function Sidebar() {
             </div>
             <div className="mt-8 border-t pt-8">
               <ul className="text-sm space-y-4 text-zinc-700">
-                <li>Contact support</li>
-                <li>Report an issue</li>
-                <li>Terms of service</li>
+                <li>
+                  <Link href={"/dashboard"}>Active credentials</Link>
+                </li>
+                <li>Documentation</li>
+                <li>Feedback</li>
               </ul>
             </div>
             <div className="mt-8 border-t pt-8">
