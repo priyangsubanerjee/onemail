@@ -1,11 +1,20 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import GlobalStateContext from "@/context/GlobalStates";
 import { signOut, useSession } from "next-auth/react";
 import Link from "next/link";
-import React, { useContext } from "react";
+import { useRouter } from "next/router";
+import React, { useContext, useEffect } from "react";
 
 function Sidebar() {
+  const router = useRouter();
   const { sidebarOpen, setSidebarOpen } = useContext(GlobalStateContext);
   const session = useSession();
+
+  useEffect(() => {
+    router.events.on("routeChangeStart", () => {
+      setSidebarOpen(false);
+    });
+  }, [router]);
 
   return (
     <>
@@ -41,7 +50,9 @@ function Sidebar() {
                 <li>
                   <Link href={"/dashboard"}>Active credentials</Link>
                 </li>
-                <li>Documentation</li>
+                <li>
+                  <Link href={"/documentation"}>Documentation</Link>
+                </li>
                 <li>Feedback</li>
               </ul>
             </div>
