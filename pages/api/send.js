@@ -15,7 +15,6 @@ export default async function handler(req, res) {
   switch (method) {
     case "POST":
       const { to, html, subject, text, secret } = req.body;
-      console.log(req.body);
       await connectDatabase();
       const client = await credential.findOne({ secret });
 
@@ -34,9 +33,10 @@ export default async function handler(req, res) {
           html,
           text,
         };
-
         let response = await transporter.sendMail(options);
         if (response) {
+          client.usage = client.usage + 1;
+          await client.save();
           res.status(200).json({ success: true, message: "Email sent" });
         } else {
           res
