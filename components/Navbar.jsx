@@ -1,6 +1,7 @@
 /* eslint-disable @next/next/no-img-element */
 import GlobalStateContext from "@/context/GlobalStates";
 import { signIn, useSession } from "next-auth/react";
+import Link from "next/link";
 import React, { useContext } from "react";
 
 function Navbar() {
@@ -22,7 +23,7 @@ function Navbar() {
             </li>
           )}
           <li>
-            <a href="/documentation">Documentaion</a>
+            <Link href="/documentation">Documentaion</Link>
           </li>
           <li>
             <a href="">Feedback</a>
