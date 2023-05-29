@@ -18,7 +18,7 @@ export default async function handler(req, res) {
       console.log(req.body);
       await connectDatabase();
       const client = await credential.findOne({ secret });
-      client.views = client.views + 1;
+
       if (client) {
         var transporter = nodemailer.createTransport({
           service: "gmail",
@@ -44,7 +44,6 @@ export default async function handler(req, res) {
             .json({ success: false, message: "Something went wrong" });
         }
       }
-      await client.save();
       break;
     default:
       res.status(405).json({ success: false, message: "Method not allowed" });
