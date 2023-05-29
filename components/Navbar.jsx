@@ -76,8 +76,7 @@ function Navbar() {
           <ul className="flex lg:hidden items-center p-3 justify-center border-b text-zinc-700 space-x-8">
             {session.status == "unauthenticated" && (
               <li>
-                {" "}
-                <a href="">Home</a>
+                <Link href="/">Home</Link>
               </li>
             )}
             <li>

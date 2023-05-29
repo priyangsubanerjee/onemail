@@ -53,7 +53,7 @@ function Documentation() {
         make sure you have a onemail account & atleast 1 active credential
       </p>
 
-      <h1 className="text-lg lg:text-xl mt-10 lg:mt-28 leading-[1.9]">
+      <h1 className="text-lg lg:text-xl mt-10 lg:mt-24 leading-[1.9]">
         Send email & wait for response using{" "}
         <span className="font-mono text-sm lg:text-base bg-red-100 px-2 py-1">
           async & await
