@@ -65,10 +65,22 @@ function Documentation() {
           </span>
         </h1>
 
-        <pre className="bg-zinc-200 pb-4 mt-7 w-full pl-8">
+        <pre className="bg-zinc-200 pb-4 mt-7 w-full pl-8 lg:pl-0 relative">
           <code className="text-xs whitespace-pre-line lg:whitespace-pre-wrap">
             {codeStringAsync}
           </code>
+          <button
+            onClick={(e) => {
+              navigator.clipboard.writeText(codeStringAsync);
+              e.target.innerText = "Copied!";
+              setTimeout(() => {
+                e.target.innerText = "Copy";
+              }, 4000);
+            }}
+            className="absolute right-2 top-2 text-sm font-jost bg-white px-4 py-2 rounded"
+          >
+            Copy
+          </button>
         </pre>
 
         <h1 className="text-xl mt-28 leading-[1.9]">
@@ -78,10 +90,22 @@ function Documentation() {
           </span>
         </h1>
 
-        <pre className="bg-zinc-200 pb-4 mt-7 w-full pl-8">
+        <pre className="bg-zinc-200 pb-4 mt-7 w-full pl-8 lg:pl-0 relative">
           <code className="text-xs whitespace-pre-line lg:whitespace-pre-wrap">
             {codeStringServerLess}
           </code>
+          <button
+            onClick={(e) => {
+              navigator.clipboard.writeText(codeStringServerLess);
+              e.target.innerText = "Copied!";
+              setTimeout(() => {
+                e.target.innerText = "Copy";
+              }, 4000);
+            }}
+            className="absolute right-2 top-2 text-sm font-jost bg-white px-4 py-2 rounded"
+          >
+            Copy
+          </button>
         </pre>
       </div>
     </main>
