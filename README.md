@@ -10,23 +10,23 @@ Onemail is a simple, reliable API for sending html temaplates directly from your
 - Install `node-fetch` package
 
 ```
-    const sendEmail = () => {
+const sendEmail = () => {
 
-        let endpoint = "https://onemail.vercel.app/api/send";
+    let endpoint = "https://onemail.vercel.app/api/send";
 
-        let params = {
-            to: "",
-            subject: "",
-            text: "",
-            html: "",
-            secret: ""
-        }
-
-        await fetch(endpoint, {
-            method: "POST",
-            body: JSON.stringify(params)
-        });
-
-       // email will be delivered in the background
+    let params = {
+        to: "",
+        subject: "",
+        text: "",
+        html: "",
+        secret: ""
     }
+
+    await fetch(endpoint, {
+        method: "POST",
+        body: JSON.stringify(params)
+    });
+
+    // email will be delivered in the background
+}
 ```
