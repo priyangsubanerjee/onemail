@@ -11,14 +11,16 @@ function Navbar() {
   return (
     <div className="font-jost bg-white">
       <nav className="h-20 flex items-center px-5 lg:px-28 bg-white border-b">
-        <div className="flex items-center space-x-4">
-          <img src="/logo.png" className="h-12" alt="" />
-          <h1 className="text-xl lg:text-2xl">Onemail</h1>
-        </div>
+        <Link href={"/"}>
+          <div className="flex items-center space-x-4">
+            <img src="/logo.png" className="h-12" alt="" />
+            <h1 className="text-xl lg:text-2xl">Onemail</h1>
+          </div>
+        </Link>
         <ul className="hidden lg:flex items-center ml-16 text-zinc-700 space-x-8">
           {session.status == "unauthenticated" && (
             <li>
-              <a href="">Home</a>
+              <Link href="/">Home</Link>
             </li>
           )}
           <li>
