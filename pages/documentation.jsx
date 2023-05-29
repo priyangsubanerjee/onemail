@@ -77,7 +77,7 @@ function Documentation() {
                 e.target.innerText = "Copy";
               }, 4000);
             }}
-            className="absolute right-2 top-2 text-sm font-jost bg-white px-4 py-2 rounded"
+            className="absolute right-2 top-2 text-sm font-jost bg-zinc-700 text-white px-4 py-2 rounded"
           >
             Copy
           </button>
@@ -102,7 +102,7 @@ function Documentation() {
                 e.target.innerText = "Copy";
               }, 4000);
             }}
-            className="absolute right-2 top-2 text-sm font-jost bg-white px-4 py-2 rounded"
+            className="absolute right-2 top-2 text-sm font-jost bg-zinc-700 text-white px-4 py-2 rounded"
           >
             Copy
           </button>
