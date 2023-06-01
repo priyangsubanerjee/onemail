@@ -57,11 +57,10 @@ export default function Home() {
               className="h-[200px] lg:hidden block mt-10 object-contain"
             />
             <p className="leading-7 lg:leading-8 mt-5">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit.
-              Accusantium quis, temporibus omnis inventore consectetur rem
-              tempore adipisci harum est impedit modi suscipit, possimus
-              necessitatibus voluptatibus, sapiente deserunt quisquam quidem
-              dolor?s
+              OTP sending email services can help to improve the security of
+              websites and applications by adding an additional layer of
+              verification. This can help to prevent unauthorized access to
+              accounts and data.
             </p>
             <div className="mt-10 flex items-center space-x-4">
               <button className="w-fit px-6 py-2 bg-indigo-500 rounded text-white">
@@ -90,11 +89,11 @@ export default function Home() {
               className="h-[200px] lg:hidden block mt-10 object-contain"
             />
             <p className="leading-7 lg:leading-8 mt-5">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit.
-              Accusantium quis, temporibus omnis inventore consectetur rem
-              tempore adipisci harum est impedit modi suscipit, possimus
-              necessitatibus voluptatibus, sapiente deserunt quisquam quidem
-              dolor?s
+              Sending welcome emails is a great way to improve brand image. By
+              personalizing your emails, reinforcing your brand identity, and
+              encouraging users to take action, you can create a positive
+              experience that will leave users with a favorable impression of
+              your brand.
             </p>
             <div className=" mt-10 flex items-center space-x-4">
               <button className="w-fit px-6 py-2 bg-indigo-500 rounded text-white">
@@ -123,11 +122,12 @@ export default function Home() {
               className="h-[200px] lg:hidden block mt-10 object-contain scale-125"
             />
             <p className="leading-7 lg:leading-8 mt-5">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit.
-              Accusantium quis, temporibus omnis inventore consectetur rem
-              tempore adipisci harum est impedit modi suscipit, possimus
-              necessitatibus voluptatibus, sapiente deserunt quisquam quidem
-              dolor?s
+              Sending invoices through mail is a traditional way to send
+              invoices to customers. It is a reliable method that is sure to get
+              the invoice to the customer. However, it can be time-consuming and
+              expensive. If you are looking for a more efficient and
+              cost-effective way to send invoices, you may want to consider
+              using an online invoicing software.
             </p>
             <div className="mt-10 flex items-center space-x-4">
               <button className="w-fit px-6 py-2 bg-indigo-500 rounded text-white">
