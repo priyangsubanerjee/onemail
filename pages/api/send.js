@@ -40,7 +40,7 @@ export default async function handler(req, res) {
           res.status(200).json({ success: true, message: "Email sent" });
         } else {
           res
-            .status(500)
+            .status(200)
             .json({ success: false, message: "Something went wrong" });
         }
       }
