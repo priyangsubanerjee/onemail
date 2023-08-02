@@ -14,7 +14,7 @@ export default async function handler(req, res) {
 
   switch (method) {
     case "POST":
-      const { to, html, subject, text, secret } = req.body;
+      const { to, html, subject, text, secret } = JSON.parse(req.body);
       await connectDatabase();
       const client = await credential.findOne({ secret });
 
